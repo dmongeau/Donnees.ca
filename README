@@ -1,5 +1,0 @@
-INSTALLATION
-
-1- Renommer le fichier app/config.sample.php en app/config.php
-2- Créer le dossier app/_cache/ avec les permissions d'écritures
-3- Si le plugin resizer est utilisé, créer les dossiers public_html/statics/photos et public_html/statics/photos/_cache avec les permissions d'écritures
