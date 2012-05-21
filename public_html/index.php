@@ -47,9 +47,9 @@ ini_set('magic_quotes_gpc',0);
  */
 $app->addPlugin('db',$app->getConfig('db'));
 $app->addPlugin('auth',$app->getConfig('auth'));
-$app->addPlugin('mail',$app->getConfig('mail'));
 $app->addPlugin('cache',$app->getConfig('cache'));
-$app->addPlugin('resizer',$app->getConfig('resizer'),false);
+//$app->addPlugin('mail',$app->getConfig('mail'));
+//$app->addPlugin('resizer',$app->getConfig('resizer'),false);
 
 /**
  *
@@ -79,8 +79,8 @@ include PATH_APP.'/data.php';
  *
  */
 $app->setLayout(PATH_LAYOUTS.'/layout.php');
-$app->setData('title','Site web');
-$app->setData('description','Description du site web');
+$app->setData('title','Données.ca');
+$app->setData('description','Données ouvertes et collectives');
 $app->setData('fbappid',$app->getConfig('facebook.appId'));
 
 /**
