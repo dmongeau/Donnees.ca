@@ -83,4 +83,37 @@ return array(
 		)
 	),
 	
+	
+	
+	/*
+	 *
+	 * Collections
+	 *
+	 */
+	'/collections' => array(
+		'page' => 'controller.php',
+		'params' => array(
+			'module' => 'collections'
+		)
+	),
+	'/collections/ajouter.html' => array(
+		'page' => 'controller.php',
+		'params' => array(
+			'module' => 'collections',
+			'action' => 'add'
+		)
+	),
+	
+	/*
+	 *
+	 * Fetch
+	 *
+	 */
+	'/fetch/:action.json' => array(
+		'page' => 'controller.php',
+		'params' => array(
+			'module' => 'fetch',
+		)
+	),
+	
 );

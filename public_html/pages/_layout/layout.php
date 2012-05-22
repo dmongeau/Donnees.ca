@@ -21,8 +21,12 @@
     <div id="page">
         <div id="header">
         	<div class="inner">
-            	<h1 align="center"><a href="/">Site web</a></h1>
+            	<h1 align="left"><a href="/">Données.ca</a></h1>
                 <div class="clear"></div>
+                <ul class="menu">
+					<li><a href="/collections/">Collections</a></li>
+					<li><a href="/collections/ajouter.html">Ajouter des données</a></li>
+				</ul>
             </div>
         </div>
         <div class="clear"></div>
@@ -35,7 +39,7 @@
         <div class="clear"></div>
 		<div id="footer">
 			<div class="inner">
-				<ul>
+				<ul class="menu">
 					<li><a href="/a-propos/">À propos</a></li>
 					<li><a href="/a-propos/contact.html">Contact</a></li>
 					<li><a href="/a-propos/conditions.html">Conditions d'utilisation</a></li>

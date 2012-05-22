@@ -22,75 +22,35 @@ body {
 	margin:0 auto;
 }
 
+/*
+ *
+ * Header
+ *
+ */
 #header {
-	margin:0;
-	background:#ddd;
-	padding:20px;
+	border-bottom:dotted 1px #000;
 }
-
 #header h1 {
-	margin:0;
-	text-align:left;
+	font-size:40px;
 }
-
 #header h1 a {
 	text-decoration:none;
-	color:#333;
+	color:#000;
 }
-
-#header .menu ul {
-	display:block;
-	margin:0;
-	padding:0;
-}
-
-#header .menu ul li {
-	display:block;
-	margin-right:20px;
-	float:left;
-}
-
-#header .menu ul li a {
-	display:block;
-	cursor:pointer;
-}
-
-#header .menu ul li.last {
-	margin:0;
-}
-
-#content {
-	margin:0;
-	position:relative;
-	background:#eee;
-}
-
-
-#inner {
-	margin:0 10px;
-	padding:20px 0;
-}
-
-#footer {
-	text-align:left;
-	background:#ddd;
-}
-#footer .inner {
-	padding:10px;
-}
-#footer .inner a {
+#header ul.menu {
+	margin-bottom:10px;
 	font-size:12px;
-	text-decoration:none;
 }
 
-#footer .inner ul {
-	position:relative;
-	float:left;
+/*
+ *
+ * Footer
+ *
+ */
+#footer {
+	border-top:dotted 1px #000;
 }
-
-#footer .inner li {
-	float:left;
-	margin-right:20px;
-	display:block;
+#footer ul.menu {
+	margin:10px 0 20px 0;
+	font-size:12px;
 }
-
