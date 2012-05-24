@@ -187,7 +187,7 @@
                 <div class="inner">
                 	<div class="field">
                         <label>Séparateur de colonne :</label>
-                        <input type="text" class="separator" class="text number" value="," />
+                        <input type="text" class="separator text number" value="," />
                         <div class="clear"></div>
                     </div>
                 </div>

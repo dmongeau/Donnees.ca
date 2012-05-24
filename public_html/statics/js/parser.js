@@ -29,6 +29,7 @@ Parser.prototype.changeColumn = function(oldKey,newKey) {
 		for(var i = 0; i < this.dataObject.length; i++) {
 			var obj = {};
 			for(var key in this.dataObject[i]) {
+				//console.log(typeof(key), key,typeof(oldKey), oldKey,typeof(newKey), newKey);
 				if(key == oldKey) {
 					obj[newKey] = this.dataObject[i][key];
 				} else {
@@ -37,14 +38,18 @@ Parser.prototype.changeColumn = function(oldKey,newKey) {
 			}
 			dataObject.push(obj);
 		}
+		this.dataObject = null;
 		this.dataObject = dataObject;
-		console.log(this.dataObject);
+		//console.log('changeColumn',oldKey,newKey,this.dataObject);
 	}
 };
 
 
 Parser.prototype.pretty = function(obj, indent) {
-	var result = "";
+	
+	
+	
+	var result = [];
 	if (obj == null) obj = this.dataObject;
 	if (indent == null) indent = "";
 	
@@ -65,10 +70,10 @@ Parser.prototype.pretty = function(obj, indent) {
 				value = "{\n" + od + "\n" + indent + "}";
 			}
 		}
-		result += indent + "'" + property + "' : " + value + ",\n";
+		result.push(indent, "'", property, "' : ", value, ",\n");
 	}
 	
-	return result.replace(/,\n$/, "");
+	return result.join('').replace(/,\n$/, "");
 };
 
 

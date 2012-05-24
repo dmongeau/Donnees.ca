@@ -11,24 +11,26 @@ switch($ACTION) {
 			if(!isset($_REQUEST['url']) || empty($_REQUEST['url'])) throw new Exception('Vous devez spécifier une url');
 			
 			$url = $_REQUEST['url'];
-			$type = NE($_REQUEST,'type','json');
 			$content = file_get_contents($url);
 			
-			$data = $content;
-			
-			Gregory::JSON(array(
+			$JSON = Gregory::JSON(array(
 				'success' => true,
-				'response' => $data
-			));
+				'response' => utf8_encode($content)
+			),true);
 			
 		} catch(Exception $e) {
 			
-			Gregory::JSON(array(
+			$JSON = Gregory::JSON(array(
 				'success' => false,
 				'error' => $e->getMessage()
-			));
+			),true);
 			
 		}
+		
+		header('Content-type: text/plain; charset="utf-8"');
+		if(isset($_REQUEST['callback'])) echo $_REQUEST['callback'].'('.$JSON.')';
+		else echo $JSON;
+		exit();
 	
 	break;
 	
