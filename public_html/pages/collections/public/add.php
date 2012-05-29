@@ -1,5 +1,5 @@
 
-<h1>Ajouter une collection de données</h1>
+<h1>Ajouter des données</h1>
 
 <form action="/collections/ajouter.html?next=<?=rawurlencode(NE($_REQUEST,'next'))?>" class="login" method="post">
     
@@ -9,6 +9,8 @@
 	<?=$this->displayErrors(true,array('alwaysList'=>true))?>
     </div>
     <?php } ?>
+    
+    <h2>1. Décrire les données</h2>
     
     <div class="field">
     	<label>Nom :</label>
@@ -25,6 +27,8 @@
     <div class="spacer-small"></div>
     <div class="hr"></div>
     <div class="spacer-small"></div>
+    
+    <h2>2. Importer les données</h2>
     
     <div id="source">
     
@@ -220,6 +224,8 @@
     <div class="hr"></div>
     <div class="spacer-small"></div>
     
+    
+    <h2>3. Organiser les données</h2>
     
     <div id="schema">
     	<h4>Schéma</h4>

@@ -20,7 +20,12 @@ Parser.prototype.getColumns = function() {
 			cols.push(key);
 		}
 	}
+	console.log('getColumns',this.dataObject,cols);
 	return cols;
+};
+
+Parser.prototype.getItems = function() {
+	return this.dataObject;
 };
 
 Parser.prototype.changeColumn = function(oldKey,newKey) {
@@ -31,14 +36,17 @@ Parser.prototype.changeColumn = function(oldKey,newKey) {
 			for(var key in this.dataObject[i]) {
 				//console.log(typeof(key), key,typeof(oldKey), oldKey,typeof(newKey), newKey);
 				if(key == oldKey) {
-					obj[newKey] = this.dataObject[i][key];
+					console.log(newKey+'');
+					obj[newKey+''] = this.dataObject[i][key];
 				} else {
+					console.log(key+'');
 					obj[key+''] = this.dataObject[i][key];
 				}
 			}
+			console.log(obj);
 			dataObject.push(obj);
 		}
-		this.dataObject = null;
+		//this.dataObject = null;
 		this.dataObject = dataObject;
 		//console.log('changeColumn',oldKey,newKey,this.dataObject);
 	}
@@ -90,9 +98,29 @@ Parser._parsers = {
 	
 	'csv' : function(e,o) {
 		var o = jQuery.extend({
-			'separator' : ','
+			'separator' : ',',
+			'firstRowCols' : false
 		},o);
 		for(var b=o.separator,f=RegExp("(\\"+b+'|\\r?\\n|\\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^"\\'+b+"\\r\\n]*))","gi"),c=[[]],a=null;a=f.exec(e);){var d=a[1];d.length&&d!=b&&c.push([]);a=a[2]?a[2].replace(RegExp('""',"g"),'"'):a[3];c[c.length-1].push(a)}
+		
+		if(o.firstRowCols && c && c.length) {
+			var cols = [];
+			for(var i = 0; i < c[0].length; i++) {
+				cols.push(c[0][i]);	
+			}
+			var items = [];
+			if(c.length > 1) {
+				for(var i = 1; i < c.length; i++) {
+					var item = {};
+					for(var ii = 0; ii < cols.length; ii++) {
+						item[cols[ii]] = typeof(c[i][ii]) != 'undefined' ? c[i][ii]:null;
+					}
+					items.push(item);
+				}
+			}
+			c = items;
+		}
+		
 		return c;
 	},
 	
@@ -101,14 +129,25 @@ Parser._parsers = {
 			'parser' : ''
 		},o);
 		
-		var items = [];
-		
 		try {
 			var $html = $(e);
 			eval(o.parser);
 		} catch(e) {}
 		
-		return items;
+		return typeof(items) == 'undefined' ? []:items;
+	},
+	
+	'other' : function(e,o) {
+		var o = jQuery.extend({
+			'parser' : ''
+		},o);
+		
+		try {
+			var data = e;
+			eval(o.parser);
+		} catch(e) {}
+		
+		return typeof(items) == 'undefined' ? []:items;
 	}
 
 };

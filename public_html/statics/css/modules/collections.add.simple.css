@@ -1,0 +1,229 @@
+
+.waiting {
+	font-size:12px;
+	padding:40px;
+	border:solid 1px #ddd;
+	color:#666;
+	background:#ffe;
+	text-align:center;
+}
+
+
+label {
+	font-weight:bold;
+}
+
+/*
+ *
+ * Import
+ *
+ */
+#import {
+	font-size:12px;
+}
+
+#file .col {
+	float:left;
+	width:40%;
+	padding:4.5%;
+}
+#file .col-first {
+	border-right:solid 1px #ddd;
+}
+
+/*
+ *
+ * Source
+ *
+ */
+#source .selected {
+	background:#eee;
+	border:solid 1px #ddd;
+	padding:10px;
+}
+#source .icons {
+	float:right;
+	padding-top:7px;
+}
+#source .infos {
+	font-size:12px;
+	color:#666;
+}
+#source .rawData {
+	font-size:12px;
+}
+#source .rawData .editor {
+	padding:5px;
+	border:solid 1px #ddd;
+	border-top:none;
+	height:400px;
+}
+#source .rawData .editor pre {
+	width:948px;
+	height:400px;
+}
+
+/*
+ *
+ * Organize
+ *
+ */
+
+/* Options */
+#organize #options {
+	float:left;
+	width:48%;
+	font-size:12px;
+	margin-right:2%;
+}
+
+#organize .ui-tabs-panel {
+	min-height:400px;
+}
+
+#organize #options .format .editor {
+	height:300px;
+}
+#organize #options .format .editor pre {
+	width:430px;
+	height:300px;
+	border:solid 1px #ddd;
+}
+
+/* Result */
+#organize #result {
+	float:left;
+	width:48%;
+	font-size:12px;
+}
+#organize #result .item {
+	min-height:400px;
+}
+
+#organize #result h4 {
+	font-size:12px;
+}
+#organize #result .list {
+	max-height:330px;
+	overflow:auto;
+	padding:5px;
+	border:solid 1px #ddd;
+}
+
+/* Cols */
+#result-cols label {
+	width:150px;
+	float:left;
+	margin-right:10px;
+	float:left;
+	text-align:left;
+}
+#result-cols .header {
+	font-size:10px;
+	font-weight:bold;
+	background:#ddd;
+	border:solid 1px #ccc;
+	border-bottom:none;
+}
+#result-cols ul {
+	border:solid 1px #ccc;
+	border-top:none;
+}
+#result-cols li {
+	border-bottom:solid 1px #ddd;
+	background:#eee;
+}
+#result-cols input, #result-cols textarea {
+	padding:2px;
+	font-size:10px;
+}
+#result-cols .name {
+	float:left;
+	padding:5px;
+	width:150px;
+}
+#result-cols .name input {
+	width:144px;
+}
+#result-cols .description {
+	float:left;
+	margin-right:10px;
+	padding:5px;
+	width:219px;
+	border-left:solid 1px #ddd;
+}
+#result-cols .description textarea {
+	width:225px;
+}
+#result-cols li label {
+	width:150px;
+	float:left;
+}
+#result-cols li input, #result-cols li textarea {
+	float:left;
+	width:225px;
+}
+#result-cols .header .description {
+	border-left:solid 1px #ccc;
+}
+
+/* Rows */
+#result-rows label {
+	width:125px;
+	float:left;
+	margin-right:10px;
+	float:left;
+	text-align:left;
+}
+#result-rows li {
+	margin-bottom:10px;
+	border:solid 1px #ccc;
+	background:#eee;
+	font-size:10px;
+}
+#result-rows li.between {
+	margin-top:20px;
+	margin-bottom:20px;
+	border:none;
+	border:dotted 1px #999;
+	background:transparent;
+	font-size:12px;
+	padding:20px 0;
+	text-align:center;
+}
+#result-rows li .name {
+	font-weight:bold;
+	background:#ccc;
+	font-size:12px;
+	padding:2px 5px 2px 10px;
+}
+#result-rows li .header {
+	font-weight:bold;
+	border-bottom:solid 1px #ddd;
+	background:#ddd;
+}
+#result-rows li .col {
+	border-bottom:solid 1px #ddd;
+}
+#result-rows li .col:hover {
+	background:#fff;
+}
+#result-rows li .last {
+	border-bottom:none;
+}
+#result-rows li .key {
+	border-right:solid 1px #ddd;
+	padding:2px 5px 2px 10px;
+}
+#result-rows li .value {
+	float:left;
+	width:200px;
+	padding:2px 10px 2px 5px;
+}
+#result-rows li .header .key {
+	border-right:solid 1px #ccc;
+}
+#result-rows li .col .key {
+	color:#666;
+}
+

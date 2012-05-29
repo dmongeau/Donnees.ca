@@ -201,7 +201,7 @@ $(function() {
 	
 	var editor = ace.edit("htmlParserEditor");
 	editor.setTheme("ace/theme/textmate");
-	editor.getSession().setMode("ace/mode/javascript");
+	editor.getSession().setMode("ace/mode/plain");
 	editor.on('blur', function() {
 		parseRawData(currentRawData,'html',{
 			'parser' : editor.getSession().getDocument().getAllLines().join("\n")

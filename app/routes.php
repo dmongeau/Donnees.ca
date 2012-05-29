@@ -113,6 +113,13 @@ return array(
 		'page' => 'controller.php',
 		'params' => array(
 			'module' => 'fetch',
+			'format' => 'json'
+		)
+	),
+	'/fetch/:action' => array(
+		'page' => 'controller.php',
+		'params' => array(
+			'module' => 'fetch',
 		)
 	),
 	
